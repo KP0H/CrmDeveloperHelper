@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConnectingToCRM" xml:space="preserve">
+    <value>Connecting to CRM...</value>
+  </data>
+  <data name="ConnectionIsReadOnlyFormat1" xml:space="preserve">
+    <value>Connection {0} is ReadOnly. Operation is prohibited.</value>
+  </data>
+  <data name="CreatedEntityMetadataFileForConnectionFormat3" xml:space="preserve">
+    <value>{0}. For '{1}' created file with Metadata: {2}</value>
+  </data>
+  <data name="CreatedEntityXmlFileForConnectionFormat3" xml:space="preserve">
+    <value>{0}. For '{1}' created file with EntityXml: {2}</value>
+  </data>
+  <data name="CreatedGlobalOptionSetMetadataFileForConnectionFormat3" xml:space="preserve">
+    <value>{0}. For Global OptionSet '{1}' created file with Metadata: {2}</value>
+  </data>
+  <data name="CurrentConnectionFormat1" xml:space="preserve">
+    <value>Current Connection: {0}</value>
+  </data>
+  <data name="CurrentServiceEndpointConnectionFormat2" xml:space="preserve">
+    <value>Current Service Endpoint Connection {0}: {1}</value>
+  </data>
+  <data name="CurrentServiceEndpointFormat1" xml:space="preserve">
+    <value>Current Service Endpoint: {0}</value>
+  </data>
+  <data name="DifferenceWasCancelled" xml:space="preserve">
+    <value>Difference was cancelled.</value>
+  </data>
+  <data name="EndOperationFormat2" xml:space="preserve">
+    <value>***********   End {0} at {1} *******************************************************</value>
+  </data>
+  <data name="ExportedAppliationRibbonDiffXmlForConnectionFormat2" xml:space="preserve">
+    <value>{0}. ApplicationRibbonDiffXml exported to file: {1}</value>
+  </data>
+  <data name="ExportedAppliationRibbonForConnectionFormat2" xml:space="preserve">
+    <value>{0}. ApplicationRibbon exported to file: {1}</value>
+  </data>
+  <data name="ExportedEntityDescriptionForConnectionFormat3" xml:space="preserve">
+    <value>{0}. {1} EntityDescription exported to {2}</value>
+  </data>
+  <data name="ExportedEntityRibbonDiffXmlForConnectionFormat3" xml:space="preserve">
+    <value>{0}. For '{1}' exported file with RibbonDiffXml: {2}</value>
+  </data>
+  <data name="ExportedEntityRibbonForConnectionFormat3" xml:space="preserve">
+    <value>{0}. For '{1}' exported file with Ribbon: {2}</value>
+  </data>
+  <data name="FileNotExistsFormat1" xml:space="preserve">
+    <value>File not exists: {0}</value>
+  </data>
+  <data name="GetAttributeMetadataByGuidFormat1" xml:space="preserve">
+    <value>GetAttributeMetadata(Guid {0})</value>
+  </data>
+  <data name="GetAttributeMetadataByStringStringFormat2" xml:space="preserve">
+    <value>GetAttributeMetadata(string {0}, string {1})</value>
+  </data>
+  <data name="GetEntityKeyMetadataByGuidFormat1" xml:space="preserve">
+    <value>GetEntityKeyMetadata(Guid {0})</value>
+  </data>
+  <data name="GetEntityKeyMetadataByStringStringFormat2" xml:space="preserve">
+    <value>GetEntityKeyMetadata(string {0}, string {1})</value>
+  </data>
+  <data name="GetEntityMetadataByGuidFormat1" xml:space="preserve">
+    <value>GetEntityMetadata(Guid {0})</value>
+  </data>
+  <data name="GetEntityMetadataByStringFormat1" xml:space="preserve">
+    <value>GetEntityMetadata(string {0})</value>
+  </data>
+  <data name="GetEntityMetadataByStringStringFormat2" xml:space="preserve">
+    <value>GetEntityMetadata(string {0}, string[] {1})</value>
+  </data>
+  <data name="GetRelationshipMetadataByGuidFormat1" xml:space="preserve">
+    <value>GetRelationshipMetadata(Guid {0})</value>
+  </data>
+  <data name="GetRelationshipMetadataByStringFormat1" xml:space="preserve">
+    <value>GetRelationshipMetadata(string {0})</value>
+  </data>
+  <data name="NoCRMConnection1" xml:space="preserve">
+    <value>No CRM Connection 1.</value>
+  </data>
+  <data name="NoCRMConnection2" xml:space="preserve">
+    <value>No CRM Connection 2.</value>
+  </data>
+  <data name="NoCurrentCRMConnection" xml:space="preserve">
+    <value>No current CRM Connection.</value>
+  </data>
+  <data name="NoFilesForDifference" xml:space="preserve">
+    <value>No files for difference.</value>
+  </data>
+  <data name="NoObjectsInCRMWereFounded" xml:space="preserve">
+    <value>No Objects in CRM were founded.</value>
+  </data>
+  <data name="NothingToPublish" xml:space="preserve">
+    <value>Nothing to publish.</value>
+  </data>
+  <data name="NoWebResourcesToAddInSolutionAllAllreadyInSolutionFormat2" xml:space="preserve">
+    <value>{0}: No WebResources to add. All webresources already in Solution {1}.</value>
+  </data>
+  <data name="NoWebResourcesToAddInSolutionFormat2" xml:space="preserve">
+    <value>{0}: No WebResources to add in solution {1}.</value>
+  </data>
+  <data name="ObjectsInCRMWereExportedToFormat1" xml:space="preserve">
+    <value>Objects in CRM were exported to {0}</value>
+  </data>
+  <data name="PublishingAllCompletedFormat1" xml:space="preserve">
+    <value>Published All in {0} Successfully.</value>
+  </data>
+  <data name="PublishingAllFailedFormat1" xml:space="preserve">
+    <value>Publishing All in {0} FAILED.</value>
+  </data>
+  <data name="PublishListIsEmpty" xml:space="preserve">
+    <value>Publish List is empty.</value>
+  </data>
+  <data name="ReportNotFoundedInConnectionFormat2" xml:space="preserve">
+    <value>{0}: Report not founded in CRM: {1}</value>
+  </data>
+  <data name="ShowingDifferenceIsNotAllowedForFormat1" xml:space="preserve">
+    <value>Showing Difference is not allowed for {0}.</value>
+  </data>
+  <data name="SolutionNotSelected" xml:space="preserve">
+    <value>Solution not selected. Adding canceled.</value>
+  </data>
+  <data name="StartingCompareProgramForCountFilesFormat1" xml:space="preserve">
+    <value>Starting Compare Program for {0} files.</value>
+  </data>
+  <data name="StartOperationFormat2" xml:space="preserve">
+    <value>*********** Start {0} at {1} *******************************************************</value>
+  </data>
+  <data name="TextIsNotValidForFieldFormat1" xml:space="preserve">
+    <value>Text is not valid for {0}.</value>
+  </data>
+  <data name="WebResourceNotFoundedInConnectionFormat2" xml:space="preserve">
+    <value>{0}: WebResource not founded in CRM: {1}</value>
+  </data>
+  <data name="XmlValidationMessageFormat2" xml:space="preserve">
+    <value>Severity: {0}      Message: {1}</value>
+  </data>
+  <data name="ExportedOrganizationDifferenceImageToFileFormat3" xml:space="preserve">
+    <value>OrganizationDifferenceImage {0} and {1} exported to file: {2}</value>
+  </data>
+  <data name="DecryptingPasswordErrorFormat1" xml:space="preserve">
+    <value>Error while Decrypting Password for user {0}. Setting default password - 'empty'.</value>
+  </data>
+  <data name="EntityFieldExportedToFormat5" xml:space="preserve">
+    <value>{0}. {1} {2} {3} exported to file: {4}</value>
+  </data>
+  <data name="EntityFieldIsEmptyFormat4" xml:space="preserve">
+    <value>{0}. {1} {2} {3} is empty.</value>
+  </data>
+  <data name="ExportedSolutionImageForConnectionFormat2" xml:space="preserve">
+    <value>{0}. SolutionImage exported to file: {1}</value>
+  </data>
+  <data name="SolutionComponentNotFoundInConnectionFormat1" xml:space="preserve">
+    <value>SolutionComponent not found in Connection {0}.</value>
+  </data>
+  <data name="SolutionComponentsCountAndUniqueFormat4" xml:space="preserve">
+    <value>Solution '{0}' has {1} components and {2} that not exists in '{3}'.</value>
+  </data>
+  <data name="UpdatingAttributes" xml:space="preserve">
+    <value>Updating Attributes:</value>
+  </data>
+  <data name="UpdatingEntities" xml:space="preserve">
+    <value>Updating Entities:</value>
+  </data>
+  <data name="AddedInPublishListFormat1" xml:space="preserve">
+    <value>Added into Publish List: {0}</value>
+  </data>
+  <data name="FilesAlreadyInPublishListFormat1" xml:space="preserve">
+    <value>Files already in Publish List: {0}</value>
+  </data>
+  <data name="FilesNotInPublishListFormat1" xml:space="preserve">
+    <value>Files not in Publish List: {0}</value>
+  </data>
+  <data name="RemovedFromPublishListFormat1" xml:space="preserve">
+    <value>Removed from Publish List: {0}</value>
+  </data>
+  <data name="ConnectionFailedFormat1" xml:space="preserve">
+    <value>Connection to {0} failed.</value>
+  </data>
+  <data name="QuickConnectionBusinessUnitIdFormat1" xml:space="preserve">
+    <value>BusinessUnitId :    {0}</value>
+  </data>
+  <data name="QuickConnectionOrganizationIdFormat1" xml:space="preserve">
+    <value>OrganizationId :    {0}</value>
+  </data>
+  <data name="QuickConnectionUserIdFormat1" xml:space="preserve">
+    <value>UserId         :    {0}</value>
+  </data>
+  <data name="SuccessfullyConnectedFormat1" xml:space="preserve">
+    <value>Successfully connected to {0}.</value>
+  </data>
+  <data name="WhoAmIRequestExecutedSuccessfully" xml:space="preserve">
+    <value>WhoAmIRequest executed successfully.</value>
+  </data>
+  <data name="ProgressReporterHeader" xml:space="preserve">
+    <value>{0}   Total: {1}</value>
+  </data>
+  <data name="ProgressReporterStep" xml:space="preserve">
+    <value>{0}...   {1} %</value>
+  </data>
+  <data name="EntityNotExistsInConnectionFormat2" xml:space="preserve">
+    <value>Entity {0} NOT EXISTS in {1}</value>
+  </data>
+  <data name="FileNotContainsXmlAttributeFormat2" xml:space="preserve">
+    <value>File does not contain Xml Attribute {0}: {1}</value>
+  </data>
+  <data name="FileTextIsNotXmlFormat1" xml:space="preserve">
+    <value>File text is not Xml: {0}</value>
+  </data>
+  <data name="SiteMapNotFoundedFormat2" xml:space="preserve">
+    <value>{0}. SiteMap with unique name '{1}' not founded.</value>
+  </data>
+  <data name="ExportedEntityRibbonArchiveForConnectionFormat3" xml:space="preserve">
+    <value>{0}. For '{1}' exported file with Ribbon Archive: {2}</value>
+  </data>
+  <data name="SystemFormNotFoundedFormat2" xml:space="preserve">
+    <value>{0}. SystemForm with id '{1}' not founded.</value>
+  </data>
+  <data name="XmlAttributeNotValidGuidFormat3" xml:space="preserve">
+    <value>Xml Attribute {0} not Valid Guid "{1}" in file: {2}</value>
+  </data>
+  <data name="SavedQueryNotFoundedFormat2" xml:space="preserve">
+    <value>{0}. SavedQuery with id '{1}' not founded.</value>
+  </data>
+</root>

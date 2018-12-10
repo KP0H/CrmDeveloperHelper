@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AreYourSureUpdateRibbonDiffForEntityFormat1" xml:space="preserve">
+    <value>Are you sure want to update {0} RibbonDiff?</value>
+  </data>
+  <data name="AreYouSureDeleteComponentsFormat2" xml:space="preserve">
+    <value>Are you sure want to delete components {0} from solution {1}?</value>
+  </data>
+  <data name="ClearListForPublish" xml:space="preserve">
+    <value>Clear List from Publish?</value>
+  </data>
+  <data name="ClearSolutionFormat1" xml:space="preserve">
+    <value>Are you sure want to clear solution {0}?</value>
+  </data>
+  <data name="CopySolutionComponentsFromToFormat2" xml:space="preserve">
+    <value>Are you sure want to copy components from {0} to {1}?</value>
+  </data>
+  <data name="DefaultDiscoveryServiceUrlTemplate" xml:space="preserve">
+    <value>http:///XRMServices/2011/Discovery.svc</value>
+  </data>
+  <data name="DefaultOrganizationServiceUrlTemplate" xml:space="preserve">
+    <value>http:////XRMServices/2011/Organization.svc</value>
+  </data>
+  <data name="DeleteCRMConnectionFormat1" xml:space="preserve">
+    <value>Delete CRM Connection '{0}'?</value>
+  </data>
+  <data name="DeleteCRMConnectionUserFormat1" xml:space="preserve">
+    <value>Delete CRM Connection User '{0}'?</value>
+  </data>
+  <data name="DeleteCrmSvcUtil" xml:space="preserve">
+    <value>Delete CrmSvcUtil?</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ExecuteOperation" xml:space="preserve">
+    <value>Execute operation?</value>
+  </data>
+  <data name="ExecuteOperations" xml:space="preserve">
+    <value>Execute operations?</value>
+  </data>
+  <data name="ExecuteTransferOperationFormat2" xml:space="preserve">
+    <value>Execute transfer operation from {0} to {1}?</value>
+  </data>
+  <data name="ExportSolutionFormat1" xml:space="preserve">
+    <value>Export solution {0}?</value>
+  </data>
+  <data name="FolderDoesNotExists" xml:space="preserve">
+    <value>Folder does not exists.</value>
+  </data>
+  <data name="FolderOrFileNameIsEmpty" xml:space="preserve">
+    <value>Folder or FileName is empty.</value>
+  </data>
+  <data name="FolderOrTextIsEmpty" xml:space="preserve">
+    <value>Folder or Text is empty.</value>
+  </data>
+  <data name="InformationTitle" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="MoveConnectionToArchiveFormat1" xml:space="preserve">
+    <value>Move CRM Connection '{0}' to Archive?</value>
+  </data>
+  <data name="NameIsEmpty" xml:space="preserve">
+    <value>Name is empty.</value>
+  </data>
+  <data name="PrefixIsEmpty" xml:space="preserve">
+    <value>Prefix is empty.</value>
+  </data>
+  <data name="PublishAllInConnectionFormat1" xml:space="preserve">
+    <value>Publish all in {0}?</value>
+  </data>
+  <data name="QuestionTitle" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="ReturnCRMConnectionToConnectionListFormat1" xml:space="preserve">
+    <value>Return CRM Connection '{0}' to Connection List?</value>
+  </data>
+  <data name="SolutionVersionTextIsNotValidVersion" xml:space="preserve">
+    <value>Solution Version text is not valid Version.</value>
+  </data>
+  <data name="WarningTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="FileExtensionIsNotAllowedForWebResourceFormat1" xml:space="preserve">
+    <value>File Extension {0} is not allowed for WebResource.</value>
+  </data>
+  <data name="PasswordIsEmpty" xml:space="preserve">
+    <value>Password is empty.</value>
+  </data>
+  <data name="UnableSaveConnectionFormat1" xml:space="preserve">
+    <value>Unable to save connection details. Error: {0}</value>
+  </data>
+  <data name="UserNameIsEmpty" xml:space="preserve">
+    <value>UserName is empty.</value>
+  </data>
+  <data name="PublishWebResourcesEqualByTextFormat2" xml:space="preserve">
+    <value>Seach equal by text among {0} files, update them and publish on
+{1}?</value>
+  </data>
+  <data name="PublishWebResourcesFormat2" xml:space="preserve">
+    <value>Continue create/update web resources and publish {0} files on
+{1}?</value>
+  </data>
+  <data name="CannotParseGuid" xml:space="preserve">
+    <value>Cannot parse text to valid Guid.</value>
+  </data>
+  <data name="DifferenceProgramNotExists" xml:space="preserve">
+    <value>Program for difference not exists.</value>
+  </data>
+  <data name="DifferenceTwoFilesArgumentsIsEmpty" xml:space="preserve">
+    <value>Difference two files arguments format is empty.</value>
+  </data>
+  <data name="DifferenceTwoFilesArgumentsNotContainsF1" xml:space="preserve">
+    <value>Difference two files arguments format does not contain %f1.</value>
+  </data>
+  <data name="DifferenceTwoFilesArgumentsNotContainsF2" xml:space="preserve">
+    <value>Difference two files arguments format does not contain %f2.</value>
+  </data>
+  <data name="FolderForExportDoesNotExists" xml:space="preserve">
+    <value>Folder for Export files does not exist.</value>
+  </data>
+  <data name="RegisterAllStepsForPluginAssemblyFormat1" xml:space="preserve">
+    <value>Register all Steps for Plugin Assembly in {0}?</value>
+  </data>
+  <data name="RegisterAllStepsForPluginTypeFormat1" xml:space="preserve">
+    <value>Register all Steps for Plugin Type in {0}?</value>
+  </data>
+  <data name="RegisterPluginStepFormat1" xml:space="preserve">
+    <value>Register Plugin Step in {0}?</value>
+  </data>
+  <data name="TextEditorProgramNotExists" xml:space="preserve">
+    <value>Program for edit text not exists.</value>
+  </data>
+  <data name="ThreeWayDifferenceArgumentsNotContainsF1" xml:space="preserve">
+    <value>ThreeWay Difference arguments format does not contain %f1.</value>
+  </data>
+  <data name="ThreeWayDifferenceArgumentsNotContainsF2" xml:space="preserve">
+    <value>ThreeWay Difference arguments format does not contain %f2.</value>
+  </data>
+  <data name="ThreeWayDifferenceArgumentsNotContainsFLocal" xml:space="preserve">
+    <value>ThreeWay Difference arguments format does not contain %flt.</value>
+  </data>
+  <data name="FileNotExistsFormat1" xml:space="preserve">
+    <value>File not exists: {0}</value>
+  </data>
+  <data name="InteractiveLogin" xml:space="preserve">
+    <value>Interactive Login</value>
+  </data>
+  <data name="PublishRibbonDiffXmlFormat2" xml:space="preserve">
+    <value>Publish RibbonDiffXml in {0} on
+{1}?</value>
+  </data>
+  <data name="DeleteFileActionFormat1" xml:space="preserve">
+    <value>Delete FileAction for {0}</value>
+  </data>
+  <data name="AreYouSureRemoveRolesFromUsersFormat2" xml:space="preserve">
+    <value>Are you sure want to remove roles {0} from users {1}?</value>
+  </data>
+  <data name="AreYouSureRemoveRolesFromTeamsFormat2" xml:space="preserve">
+    <value>Are you sure want to remove roles {0} from teams {1}?</value>
+  </data>
+  <data name="AreYouSureRemoveUsersFromTeamsFormat2" xml:space="preserve">
+    <value>Are you sure want to remove users {0} from teams {1}?</value>
+  </data>
+</root>

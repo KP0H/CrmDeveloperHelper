@@ -1,0 +1,421 @@
+﻿<src:WindowBase x:Class="Nav.Common.VSPackages.CrmDeveloperHelper.Views.WindowOrganizationComparer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Nav.Common.VSPackages.CrmDeveloperHelper.Views"
+        xmlns:helpers="clr-namespace:Nav.Common.VSPackages.CrmDeveloperHelper.Helpers"
+        xmlns:model="clr-namespace:Nav.Common.VSPackages.CrmDeveloperHelper.Model"
+        Title="Organization Comparer" Height="492" Width="1263.985" WindowStartupLocation="Manual">
+    <src:WindowBase.Resources>
+        <BitmapImage x:Key="ImageAdd" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/Add.png" />
+        <BitmapImage x:Key="ImageUp" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/IndexUp.png" />
+        <BitmapImage x:Key="ImageDown" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/IndexDown.png" />
+        <BitmapImage x:Key="ImageDelete" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/Delete.png" />
+        <BitmapImage x:Key="ImageEdit" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/Edit.png" />
+        <BitmapImage x:Key="ImageOpenFolder" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/OpenFolder.png" />
+        <BitmapImage x:Key="ImageCopy" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/Copy.png" />
+        <BitmapImage x:Key="ImageCheck" DecodePixelWidth="16" DecodePixelHeight="16" UriSource="pack://application:,,,/Nav.Common.VSPackages.CrmDeveloperHelper;component/Resources/Check.png" />
+
+        <ContextMenu x:Key="listContextMenu">
+            <MenuItem Header="Test Connection" VerticalAlignment="Center" Click="tSBTestConnection_Click">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16" Source="{StaticResource ImageCheck}"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Edit" VerticalAlignment="Center" Click="tSBEdit_Click">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16" Source="{StaticResource ImageEdit}"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Create Copy" VerticalAlignment="Center" Click="tSBCreateCopy_Click">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16" Source="{StaticResource ImageCopy}"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Header="Move to Archive" VerticalAlignment="Center" Click="tSBMoveToArchive_Click">
+                <MenuItem.Icon>
+                    <Image Width="16" Height="16" Source="{StaticResource ImageDelete}"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+    </src:WindowBase.Resources>
+    <Grid>
+        <Label Content="Folder for Export" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtBFolder" Text="{Binding Path=FolderForExport}" Height="23" Margin="129,12,10,0"   VerticalAlignment="Top" VerticalContentAlignment="Center" TabIndex="2147483647"/>
+        <DockPanel LastChildFill="True" Margin="10,41,10,63">
+            <ToolBar VerticalAlignment="Top" DockPanel.Dock="Top" >
+                <ToolBar.Resources>
+                    <Style TargetType="{x:Type ToolBarPanel}">
+                        <Setter Property="Orientation" Value="Vertical"/>
+                    </Style>
+                </ToolBar.Resources>
+                <DockPanel>
+                    <DockPanel.Resources>
+                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                            <Setter Property="Margin" Value="3" />
+                            <Setter Property="Padding" Value="2" />
+                        </Style>
+                        <Style TargetType="{x:Type MenuItem}">
+                            <Setter Property="Margin" Value="3" />
+                            <Setter Property="Padding" Value="2" />
+                        </Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Margin" Value="5,0,0,0" />
+                        </Style>
+                        <Style TargetType="{x:Type StackPanel}">
+                            <Setter Property="Orientation" Value="Horizontal" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}">
+                            <Setter Property="Margin" Value="10,0,10,0" />
+                        </Style>
+                    </DockPanel.Resources>
+                    <ToolBarPanel Orientation="Horizontal" >
+                        <Button x:Name="tSBCreate" HorizontalAlignment="Left" Click="tSBCreate_Click">
+                            <StackPanel>
+                                <Image Width="16" Height="16"  Source="{StaticResource ImageAdd}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Create</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="tSBEdit" HorizontalAlignment="Left" IsEnabled="False" Click="tSBEdit_Click">
+                            <StackPanel>
+                                <Image Width="16" Height="16"  Source="{StaticResource ImageEdit}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Edit</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="tSBCreateCopy" HorizontalAlignment="Left" IsEnabled="False" Click="tSBCreateCopy_Click">
+                            <StackPanel>
+                                <Image Width="16" Height="16"  Source="{StaticResource ImageCopy}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Create Copy</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button x:Name="tSBTestConnection" HorizontalAlignment="Left" IsEnabled="False" Click="tSBTestConnection_Click">
+                            <StackPanel>
+                                <Image  Width="16" Height="16"  Source="{StaticResource ImageCheck}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0">Test Connection</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button x:Name="tSBUp" HorizontalAlignment="Left" IsEnabled="False" Click="tSBUp_Click">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="16" Height="16"  Source="{StaticResource ImageUp}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="tSBDown" HorizontalAlignment="Left" IsEnabled="False" Click="tSBDown_Click">
+                            <StackPanel>
+                                <Image Width="16" Height="16"  Source="{StaticResource ImageDown}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Button x:Name="tSBOpenFolder" HorizontalAlignment="Left" Click="tSBOpenFolder_Click" >
+                            <StackPanel>
+                                <Image Width="16" Height="16"  Source="{StaticResource ImageOpenFolder}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Open Folder</TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Separator />
+                        <Menu VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}">
+                            <MenuItem x:Name="tSDDBCheck" Header="Check">
+                                <MenuItem Header="CRM Objects names for prefix" Click="tSMICheckObjectsNamesForPrefix_Click"/>
+                                <MenuItem Header="CRM Objects names for prefix and show dependent components" Click="tSMICheckObjectsNamesForPrefixAndShowDependentComponents_Click"/>
+                                <MenuItem Header="CRM Objects marked to delete and show dependent components" Click="tSMICheckObjectsMarkedToDeleteAndShowDependentComponents_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Workflows used Entities" Click="tSMICheckWorkflowsUsedEntities_Click"/>
+                                <MenuItem Header="Workflows used Not Exists Entities" Click="tSMICheckWorkflowsUsedNotExistsEntities_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Find Entity Objects by name" Click="tSMIFindEntityObjectsByName_Click"/>
+                                <MenuItem Header="Find Entity Objects contains string" Click="tSMIFindEntityObjectsContainsString_Click"/>
+                                <MenuItem Header="Find Entity Objects by Id" Click="tSMIFindEntityObjectsById_Click"/>
+                                <MenuItem Header="Find Entity Objects by Uniqueidentifier" Click="tSMIFindEntityObjectsByUniqueidentifier_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Entities Ownership" Click="tSMICheckEntitiesOwnership_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Global OptionSet Duplicates on Entity" Click="tSMICheckGlobalOptionSetDuplicatesOnEntity_Click"/>
+                                <MenuItem Header="Solution ComponentType Enum" Click="tSMISolutionComponentTypeEnum_Click"/>
+                                <MenuItem Header="Create All Dependency Nodes Description" Click="tSMICreateAllDependencyNodesDescription_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Check Managed Entities in CRM" Click="tSMICheckManagedEntitiesInCRM_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Plugin Steps Duplicates" Click="tSMICheckPluginStepsDuplicates_Click"/>
+                                <MenuItem Header="Plugin Images Duplicates" Click="tSMICheckPluginImagesDuplicates_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Plugin Steps Required Components" Click="tSMICheckPluginStepsRequiredComponents_Click"/>
+                                <MenuItem Header="Plugin Images Required Componentss" Click="tSMICheckPluginImagesRequiredComponents_Click"/>
+                            </MenuItem>
+                        </Menu>
+                        <Menu VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" >
+                            <MenuItem x:Name="tSDDBExport" Header="Export">
+                                <MenuItem Header="Open Organization Difference Image"  Click="tSMIOpenOrganizationDifferenceImage_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Plugin Configuration">
+                                    <MenuItem Header="Create Plugin Configuration"  Click="tSMIExportCreatePluginConfiguration_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="PluginType Description"  Click="tSMIExportPluginConfigurationType_Click"/>
+                                    <MenuItem Header="Plugin Assembly Description"  Click="tSMIExportPluginConfigurationAssembly_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Plugin Configuration Tree"  Click="tSMIExportPluginConfigurationTree_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Plugin Configuration Comparer"  Click="tSMIExportPluginConfigurationComparer_Click"/>
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Entity Metadata"  Click="tSMIExportEntityMetadata_Click"/>
+                                
+                                <MenuItem Header="Entity Information" >
+                                    <MenuItem Header="Entity Attribute Explorer"  Click="btnEntityAttributeExplorer_Click"/>
+                                    <MenuItem Header="Entity Relationship One-To-Many Explorer" Click="btnEntityRelationshipOneToManyExplorer_Click"/>
+                                    <MenuItem Header="Entity Relationship Many-To-Many Explorer" Click="btnEntityRelationshipManyToManyExplorer_Click"/>
+                                    <MenuItem Header="Entity Key Explorer" Click="btnEntityKeyExplorer_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Entity SecurityRoles Explorer" Click="miEntitySecurityRolesExplorer_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="System Form"  Click="tSMIExportSystemForms_Click"/>
+                                    <MenuItem Header="System View"  Click="tSMIExportSystemViews_Click"/>
+                                    <MenuItem Header="System Chart"  Click="tSMIExportSystemCharts_Click"/>
+                                </MenuItem>
+                                <MenuItem Header="Plugin Information" >
+                                    <MenuItem Header="PluginType Description"  Click="tSMIExportPluginTypeDescription_Click"/>
+                                    <MenuItem Header="Plugin Assembly Description"  Click="tSMIExportPluginAssemblyDescription_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Plugin Tree"  Click="tSMIExportPluginTree_Click"/>
+                                    <MenuItem Header="Message Tree" Click="tSMIExportSdkMessageTree_Click" />
+                                    <MenuItem Header="Message Request Tree" Click="tSMIExportSdkMessageRequestTree_Click" />
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="ApplicationRibbon"  Click="tSMIExportApplicationRibbon_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Organization" Click="tSMIExportOrganization_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Global Option Sets"  Click="tSMIExportGlobalOptionSets_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="SiteMap"  Click="tSMIExportSitemap_Click"/>
+                                <MenuItem Header="System Forms Events"  Click="tSMIExportSystemFormsEvents_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="WebResources"  Click="tSMIExportWebResources_Click"/>
+                                <MenuItem Header="Workflows"  Click="tSMIExportWorkflows_Click"/>
+                                <MenuItem Header="Reports"  Click="tSMIExportReports_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Solution Explorer"  Click="tSMIExportSolutionComponents_Click"/>
+                                <MenuItem Header="Open SolutionImage Window"  Click="tSMIOpenSolutionImage_Click"/>
+                            </MenuItem>
+                        </Menu>
+                        <Menu VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" >
+                            <MenuItem x:Name="tSDDBCompareOrganizations" Header="Compare Organizations">
+                                <MenuItem Header="Organizations" Click="tSMIOrganizations_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Entity Information">
+                                    <MenuItem Header="Entities" Click="tSMIEntities_Click"/>
+                                    <MenuItem Header="Entity Labels" Click="tSMIEntityLabels_Click"/>
+                                    <MenuItem Header="Entity Maps" Click="tSMIEntityMaps_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="All Entity Metadata" Click="tSMICompareAllEntityMetadata_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="System Forms" Click="tSMISystemForms_Click"/>
+                                    <MenuItem Header="System Views" Click="tSMISystemSavedQueries_Click"/>
+                                    <MenuItem Header="System Charts" Click="tSMISystemCharts_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="All Entity Objects" Click="tSMICompareAllEntityObjects_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Ribbons" Click="tSMIRibbons_Click"/>
+                                    <MenuItem Header="Ribbons with details" Click="tSMIRibbonsWithDetails_Click"/>
+                                    <MenuItem Header="Display Strings" Click="tSMIDisplayStrings_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="All Entity Information" Click="tSMICompareAllEntityInformation_Click"/>
+                                </MenuItem>
+                                <MenuItem Header="Plugin Information">
+                                    <MenuItem Header="Plugin Assemblies" Click="tSMIPluginAssemblies_Click"/>
+                                    <MenuItem Header="Plugin Types" Click="tSMIPluginTypes_Click"/>
+                                    <MenuItem Header="Plugin Steps by PluginType Names" Click="tSMIPluginStepsByPluginTypeNames_Click"/>
+                                    <MenuItem Header="Plugin Steps by Ids" Click="tSMIPluginStepsByIds_Click"/>
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="All Plugin Information" Click="tSMICompareAllPluginInformation_Click"/>
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Global OptionSets" Click="tSMIGlobalOptionSets_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="SiteMaps" Click="tSMISitemaps_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Translation Information">
+                                    <MenuItem Header="Default Translations" Click="tSMIDefaultTranslations_Click" />
+                                    <MenuItem Header="Field Translations" Click="tSMIFieldTranslations_Click" />
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Compare All Translations" Click="tSMICompareAllTranslations_Click" />
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="WebResources" Click="tSMIWebResources_Click" />
+                                <MenuItem Header="WebResources with details" Click="tSMIWebResourcesWithDetails_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Reports" Click="tSMIReports_Click" />
+                                <MenuItem Header="Templates">
+                                    <MenuItem Header="Email Templates" Click="tSMIEmailTemplate_Click" />
+                                    <MenuItem Header="MailMergeTemplates" Click="tSMIMailMergeTemplate_Click" />
+                                    <MenuItem Header="KBArticleTemplates" Click="tSMIKBArticleTemplate_Click" />
+                                    <MenuItem Header="Contract Templates" Click="tSMIContractTemplate_Click" />
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Compare All Templates" Click="tSMICompareAllTemplates_Click" />
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Connection Information">
+                                    <MenuItem Header="Connection Roles" Click="tSMIConnectionRoles_Click" />
+                                    <MenuItem Header="Connection Role Categories" Click="tSMIConnectionRoleCategories_Click" />
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="All Connection Information" Click="tSMICompareAllConnectionInformation_Click" />
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Workflows" Click="tSMIWorkflows_Click" />
+                                <MenuItem Header="Workflows with details" Click="tSMIWorkflowsWithDetails_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Security Information">
+                                    <MenuItem Header="Security Roles" Click="tSMISecurityRoles_Click" />
+                                    <MenuItem Header="Field Security Profiles" Click="tSMIFieldSecurityProfiles_Click" />
+                                    <Separator Margin="10,0"/>
+                                    <MenuItem Header="Compare All Security" Click="tSMICompareAllSecurity_Click" />
+                                </MenuItem>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Compare All" Click="tSMICompareAll_Click" />
+                            </MenuItem>
+                        </Menu>
+                        <Menu VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" >
+                            <MenuItem x:Name="tSDDBShowDifference" Header="Show Difference">
+                                <MenuItem Header="Entity Metadata" Click="tSMIDifferenceEntityMetadata_Click"/>
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="System Forms" Click="tSMIDifferenceSystemForms_Click" />
+                                <MenuItem Header="System Views" Click="tSMIDifferenceSystemSavedQueries_Click" />
+                                <MenuItem Header="System Charts" Click="tSMIDifferenceSystemCharts_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="ApplicationRibbons" Click="tSMIDifferenceApplicationRibbons_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Global OptionSets" Click="tSMIDifferenceGlobalOptionSets_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Sitemaps" Click="tSMIDifferenceSitemaps_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="WebResources" Click="tSMIDifferenceWebResources_Click" />
+                                <MenuItem Header="Reports" Click="tSMIDifferenceReports_Click" />
+                                <Separator Margin="10,0"/>
+                                <MenuItem Header="Plugin Assemblies" Click="tSMIDifferencePluginAssemblies_Click" />
+                                <MenuItem Header="Workflows" Click="tSMIDifferenceWorkflows_Click" />
+                            </MenuItem>
+                        </Menu>
+                        <Separator />
+                        <Menu VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" >
+                            <MenuItem x:Name="tSDDBTransfer" Header="Transfer">
+                                <MenuItem x:Name="tSMITransferAuditFrom1To2" Header="Audit from 1 to 2" Click="tSMITransferAuditFrom1To2_Click"/>
+                                <Separator/>
+                                <MenuItem x:Name="tSMITransferAuditFrom2To1" Header="Audit from 2 to 1" Click="tSMITransferAuditFrom2To1_Click"/>
+                            </MenuItem>
+                        </Menu>
+                    </ToolBarPanel>
+                    <Button x:Name="tSBMoveToArchive" HorizontalAlignment="Right" DockPanel.Dock="Right" IsEnabled="False" Click="tSBMoveToArchive_Click" >
+                        <StackPanel>
+                            <Image Width="16" Height="16"  Source="{StaticResource ImageDelete}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Move to Archive</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </DockPanel>
+            </ToolBar>
+            <ListView x:Name="lstVwConnections" SelectionMode="Extended" SelectionChanged="lstVwConnections_SelectionChanged" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" DockPanel.Dock="Right" Height="Auto" Width="Auto" >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="VerticalContentAlignment"  Value="Stretch"/>
+                        <Setter Property="ContextMenu" Value="{StaticResource listContextMenu}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsCurrentConnection}" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="Lime"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="30">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <CheckBox IsChecked="{Binding IsReadOnly}" Margin="6,3" ToolTip="{Binding ToolTip}" IsEnabled="False"  />
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Name" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding Name}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="GroupName" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding GroupName}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="PublicUrl" Width="300">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding PublicUrl}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="User" Width="180">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding GetUsername}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Ver" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding OrganizationVersion}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Lang" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding DefaultLanguage}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Currency" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Gray" BorderThickness="1" Margin="-6,-3">
+                                        <TextBlock Text="{Binding BaseCurrency}" Margin="6,3" ToolTip="{Binding ToolTip}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+        <Label Content="Action" HorizontalAlignment="Left" Margin="10,0,0,32" Height="25" Padding="10,0" VerticalAlignment="Bottom" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="cmBFileAction" SelectedItem="{Binding Path=DefaultFileAction}" ItemsSource="{Binding Source={helpers:EnumBindingSource {x:Type model:FileAction}}}" Margin="69,0,0,33" Padding="10,0" Height="25" VerticalAlignment="Bottom" VerticalContentAlignment="Center" IsReadOnly="True" SelectedIndex="0" HorizontalAlignment="Left" Width="254" />
+        <Button x:Name="btnClose" Content="Close" Margin="0,0,10,38" Click="btnClose_Click" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <StatusBar Height="24" VerticalAlignment="Bottom">
+            <ProgressBar x:Name="tSProgressBar" Width="200" Height="20" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+            <StatusBarItem x:Name="stBIStatus" Content="" VerticalAlignment="Top"/>
+        </StatusBar>
+    </Grid>
+</src:WindowBase>
